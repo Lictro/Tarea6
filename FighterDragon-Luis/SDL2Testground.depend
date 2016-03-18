@@ -774,9 +774,12 @@
 1457104908 source:c:\users\luis alvarez\documents\github\tarea5\fighterdragon-luis\inputmanager.cpp
 	"InputManager.h"
 
-1458275241 source:c:\users\luis alvarez\documents\github\tarea5\fighterdragon-luis\main.cpp
+1458278647 source:c:\users\luis alvarez\documents\github\tarea5\fighterdragon-luis\main.cpp
 	<SDL.h>
 	<SDL_image.h>
+	<SDL_mixer.h>
+	<stdio.h>
+	<string>
 	<iostream>
 	<list>
 	"Character.h"
@@ -1123,4 +1126,93 @@
 
 1458272757 c:\users\luis alvarez\documents\github\tarea5\fighterdragon-luis\evaluar.h
 	"Character.h"
+
+1451801791 c:\users\luis alvarez\documents\sdl2_mixer-2.0.1\i686-w64-mingw32\include\sdl2\sdl_mixer.h
+	"SDL_stdinc.h"
+	"SDL_rwops.h"
+	"SDL_audio.h"
+	"SDL_endian.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1457104908 source:c:\users\luis alvarez\documents\github\tarea6\fighterdragon-luis\button.cpp
+	"Button.h"
+
+1457104908 c:\users\luis alvarez\documents\github\tarea6\fighterdragon-luis\button.h
+
+1458273159 source:c:\users\luis alvarez\documents\github\tarea6\fighterdragon-luis\character.cpp
+	"Character.h"
+
+1458268834 c:\users\luis alvarez\documents\github\tarea6\fighterdragon-luis\character.h
+	<iostream>
+	<map>
+	<fstream>
+	"Move.h"
+	"InputManager.h"
+
+1457668150 c:\users\luis alvarez\documents\github\tarea6\fighterdragon-luis\move.h
+	<SDL.h>
+	<SDL_image.h>
+	<iostream>
+	<vector>
+	"Sprite.h"
+	"Button.h"
+
+1457668160 c:\users\luis alvarez\documents\github\tarea6\fighterdragon-luis\sprite.h
+	<SDL.h>
+	<SDL_image.h>
+	<iostream>
+	<vector>
+	"Hitbox.h"
+	"Utility.h"
+
+1457668387 c:\users\luis alvarez\documents\github\tarea6\fighterdragon-luis\hitbox.h
+	<SDL.h>
+
+1457668387 c:\users\luis alvarez\documents\github\tarea6\fighterdragon-luis\utility.h
+	<SDL.h>
+	"Hitbox.h"
+
+1457668185 c:\users\luis alvarez\documents\github\tarea6\fighterdragon-luis\inputmanager.h
+	<SDL.h>
+	"Move.h"
+	"Button.h"
+	"DeviceButton.h"
+	<map>
+	<list>
+	<fstream>
+
+1457104908 c:\users\luis alvarez\documents\github\tarea6\fighterdragon-luis\devicebutton.h
+
+1457104908 source:c:\users\luis alvarez\documents\github\tarea6\fighterdragon-luis\devicebutton.cpp
+	"DeviceButton.h"
+
+1457104908 source:c:\users\luis alvarez\documents\github\tarea6\fighterdragon-luis\hitbox.cpp
+	"Hitbox.h"
+
+1457104908 source:c:\users\luis alvarez\documents\github\tarea6\fighterdragon-luis\inputmanager.cpp
+	"InputManager.h"
+
+1458308040 source:c:\users\luis alvarez\documents\github\tarea6\fighterdragon-luis\main.cpp
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_mixer.h>
+	<stdio.h>
+	<string>
+	<iostream>
+	<list>
+	"Character.h"
+	"Button.h"
+	"DeviceButton.h"
+	"InputManager.h"
+
+1457104908 source:c:\users\luis alvarez\documents\github\tarea6\fighterdragon-luis\move.cpp
+	"Move.h"
+
+1457700014 source:c:\users\luis alvarez\documents\github\tarea6\fighterdragon-luis\sprite.cpp
+	"Sprite.h"
+
+1457668782 source:c:\users\luis alvarez\documents\github\tarea6\fighterdragon-luis\utility.cpp
+	"Utility.h"
 

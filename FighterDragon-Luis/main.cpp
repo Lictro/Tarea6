@@ -1,5 +1,8 @@
 #include<SDL.h>
 #include<SDL_image.h>
+#include<SDL_mixer.h>
+#include<stdio.h>
+#include<string>
 #include<iostream>
 #include<list>
 #include "Character.h"
@@ -18,6 +21,9 @@ SDL_Texture *punta2;
 SDL_Rect rect_background,rect_character,rec_punta1,rec_punta2;
 int score1=0;
 int score2=0;
+Mix_Music *gMusic=NULL;
+Mix_Chunk *gChunk=NULL;
+bool success=true;
 
 int main( int argc, char* args[] )
 {
@@ -31,6 +37,26 @@ int main( int argc, char* args[] )
     {
         return 20;
     }
+
+    if( Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 2048 ) < 0 ){
+                    printf( "SDL_mixer could not initialize! SDL_mixer Error: %s\n", Mix_GetError() );
+                    success = false;
+    }
+
+    gMusic = Mix_LoadMUS( "sf2f.wav" );
+    if( gMusic == NULL )
+    {
+        printf( "Failed to load beat music! SDL_mixer Error: %s\n", Mix_GetError() );
+        success = false;
+    }
+
+    gChunk = Mix_LoadWAV( "golpe.wav" );
+    if( gChunk == NULL )
+    {
+        printf( "Failed to load scratch sound effect! SDL_mixer Error: %s\n", Mix_GetError() );
+        success = false;
+    }
+
     //SDL Renderer
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED );
     if (renderer == NULL)
@@ -64,7 +90,7 @@ int main( int argc, char* args[] )
     int frame=0;
 
     double last_fame_ticks=SDL_GetTicks();
-
+    Mix_PlayMusic(gMusic,-1);
     //Main Loop
     while(true)
     {
@@ -151,6 +177,7 @@ int main( int argc, char* args[] )
                     if(currentKeyStates[ SDL_SCANCODE_X ] || currentKeyStates[ SDL_SCANCODE_Z ])
                     {
                         if(damage(rect1,rect2)){
+                            Mix_PlayChannel( -1, gChunk, 0 );
                             character2->retroseso();
                             drawRect(renderer,rect2.x,rect2.y,rect2.w,rect2.h,0,0,255,0);
                             cout<<"Ahhhh!"<<endl;
@@ -159,6 +186,7 @@ int main( int argc, char* args[] )
                     if(currentKeyStates[ SDL_SCANCODE_N ] ||currentKeyStates[ SDL_SCANCODE_B ])
                     {
                         if(damage(rect1,rect2)){
+                            Mix_PlayChannel( -1, gChunk, 0 );
                             character->retroseso();
                             drawRect(renderer,rect1.x,rect1.y,rect1.w,rect1.h,0,0,255,0);
                             cout<<"Ahhhh!"<<endl;
@@ -202,8 +230,10 @@ int main( int argc, char* args[] )
 
         if(score1==3){
             cout<<"Jugador 1 ganoooo"<<endl;
+             Mix_FreeMusic( gMusic );
         }else if(score2==3){
             cout<<"Jugador 2 ganoooo"<<endl;
+             Mix_FreeMusic( gMusic );
         }
 
 //        drawRect(renderer,10,30,50,100,
